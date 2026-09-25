@@ -1,0 +1,11 @@
+# Evidencia local, puede contener datos privados. Conservar fuera de Git por defecto.
+harness/ui/tasks/
+harness/ui/evidence/
+harness/ui/references/targets/*
+harness/ui/references/examples/*
+harness/ui/references/brand-assets/*
+!harness/ui/references/targets/.gitkeep
+!harness/ui/references/examples/.gitkeep
+!harness/ui/references/brand-assets/.gitkeep
+
+.DS_Store
