@@ -4,6 +4,7 @@ Estado: READY | IN_PROGRESS | DONE | NEEDS_REVIEW | BLOCKED | ESCALATE
 Pasadas iniciadas: 0/2 (persistir al retomar; nunca reiniciar por cambio de sesión)
 
 ## Pedido
+- Cliente / modelo / esfuerzo efectivos / herramientas de imágenes y captura:
 - Ruta / objetivo / estado de pantalla:
 - Targets (archivo, aprobación, ancho×alto CSS, DPR, tema):
 - Tipo de referencia: target del producto / inspiración externa / no indicado.
