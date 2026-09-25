@@ -1,11 +1,15 @@
 # UI Light · contrato V1
 
-Un agente actualiza una UI funcional. La referencia define la actualización visual
+Un agente, desde Codex o Claude Code, actualiza una UI funcional. La referencia define la actualización visual
 dentro del alcance pedido; el sitio actual aporta su marca y el código existente
 guía la implementación. Conservar logos, fuentes, paleta y tokens salvo cambio
 explícito de marca. Una captura externa aporta composición, no una nueva identidad. No reconstruir la pantalla ni diseñar
 un sistema nuevo. No iniciar subagentes, revisores, investigación web ni generación
-de assets por defecto. Luna medium es el candidato inicial, no calidad garantizada.
+de assets por defecto. En Codex, Luna medium es el candidato inicial, no calidad
+garantizada. En Claude Code, usar el modelo/esfuerzo configurados por el equipo;
+no aplicar `.codex/config.toml` ni abrir Codex para ejecutar la tarea.
+Al cambiar de cliente, conservar UI-ID, evidencia y pasadas; verificar las herramientas
+del nuevo entorno. No ejecutar ambos clientes simultáneamente sobre la misma tarea.
 
 ## Entrada y preparación
 
