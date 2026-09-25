@@ -1,7 +1,9 @@
 # UI Light Harness · V1
 
 **Un agente, una UI existente, hasta dos pasadas visuales.** Paquete de instrucciones
-y configuración para un piloto con Codex + GPT-6 Luna medium. No es una aplicación,
+para usar desde **Codex o Claude Code**, con las mismas reglas visuales.
+Codex incluye un default de piloto GPT-6 Luna medium; Claude Code conserva el modelo
+y esfuerzo configurados por el equipo. No es una aplicación,
 un motor de screenshots ni un sistema multiagente. No se ejecutaron modelos reales
 para validarlo. **Empezá por [USO.md](USO.md)**: instalación y ejemplos para el equipo.
 [Flujo visual](docs/ui-workflow.html) · [Evaluación crítica](docs/DECISIONES.md).
@@ -16,18 +18,20 @@ o corregir spacing de una pantalla. Preserva comportamiento, datos y semántica.
 El screenshot define la actualización pedida; una referencia externa no autoriza un rebranding.
 
 No cubre una app nueva, autenticación, pagos, APIs, estado complejo ni refactors amplios.
-Una tarea visual también puede ser demasiado compleja para Luna: se escala con evidencia.
+Una tarea visual también puede superar al modelo elegido: se escala con evidencia.
 
 ## Preparación una vez por proyecto
 
 Un dev responsable integra el paquete en la raíz de una app existente:
 
 1. Copiar `harness/ui/` y, opcionalmente, `docs/ui-workflow.html` con sus documentos
-   enlazados. Integrar el bloque de `AGENTS.md` sin reemplazar instrucciones existentes.
+   enlazados. Integrar `AGENTS.md` y, para Claude Code, `CLAUDE.md`, sin reemplazar
+   instrucciones existentes. La entrada de Claude importa la misma entrada breve
+   mediante `@AGENTS.md`; no duplica el procedimiento.
 2. Completar `harness/ui/EXISTING-UI.md`: cómo levantar la app, abrir la ruta, capturar
    screenshots y ejecutar checks con herramientas ya disponibles. No instalar un
    segundo framework de tests o navegador por defecto.
-3. Para un proyecto/worktree **dedicado a UI Light**, integrar las dos claves de
+3. En **Codex**, para un proyecto/worktree **dedicado a UI Light**, integrar las dos claves de
    `.codex/config.toml`. No sobrescribir configuraciones existentes ni aplicar Luna
    al repo mixto donde el orquestador principal necesita Sol/Opus.
 4. Integrar las exclusiones de `.gitignore` sin reemplazar las del proyecto. Targets,
@@ -42,10 +46,17 @@ pueden prevalecer. Comprobar una vez el modelo efectivo al abrir una tarea nueva
 No cambia el modelo de esta conversación ni la configuración global del equipo.
 Fuente: [configuración de Codex](https://learn.chatgpt.com/docs/config-file/config-reference).
 
+Claude Code usa `CLAUDE.md` para cargar las instrucciones comunes. Su modelo y esfuerzo
+se gestionan en Claude Code: este paquete no impone Sonnet/Opus ni modifica permisos,
+MCP o autenticación. Verificar la carga de instrucciones en `/context` y registrar el
+modelo efectivo en la tarea. Si faltan herramientas para leer/capturar imágenes, BLOCKED.
+Fuentes: [memoria e imports de Claude Code](https://code.claude.com/docs/en/memory) y
+[configuración de modelos](https://code.claude.com/docs/en/model-config).
+
 ## Uso cotidiano
 
 El dev pone los targets en `harness/ui/references/targets/`, abre el proyecto preparado
-en Codex y pide:
+en Codex **o Claude Code** y pide:
 
 ```text
 Usá UI Light. Actualizá /dashboard para que coincida con
@@ -67,8 +78,9 @@ DONE, o una única corrección residual → DONE / NEEDS_REVIEW. No siempre usa 
 | Archivo | Función |
 |---|---|
 | `USO.md` | Guía práctica para instalarlo y pedir cambios |
-| `AGENTS.md` | Entrada breve, activación y límites |
-| `.codex/config.toml` | Default para proyecto UI dedicado |
+| `AGENTS.md` | Entrada breve compartida, activación y límites |
+| `CLAUDE.md` | Entrada de Claude Code que importa AGENTS.md |
+| `.codex/config.toml` | Default solo para Codex en proyecto UI dedicado |
 | `harness/ui/UI-LIGHT.md` | Contrato de ejecución y cierre |
 | `harness/ui/REFERENCE-POLICY.md` | Resolver fuentes, estados y conflictos |
 | `harness/ui/EXISTING-UI.md` | Mapa operativo completado una vez |

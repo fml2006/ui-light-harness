@@ -10,25 +10,38 @@ la app de nuevo ni preparar un design system.
 ## 1. Preparar cada proyecto una sola vez
 
 Este repositorio contiene las reglas, no la aplicación donde vas a trabajar.
-Descargalo o clonalo. Luego abrí **tu app existente** en Codex y pedí lo siguiente,
+Descargalo o clonalo. Luego abrí **tu app existente** en Codex **o Claude Code** y pedí lo siguiente,
 reemplazando la ruta entre corchetes por la ubicación real del kit:
 
 ```text
 Integrá UI Light desde [ruta local del kit] en esta app.
 Copiá harness/ui sin pisar archivos existentes e integrá sus instrucciones
-AGENTS.md y exclusiones .gitignore con las nuestras.
+AGENTS.md, CLAUDE.md y exclusiones .gitignore con las nuestras.
+Conservá una sola copia del procedimiento común en harness/ui.
 Completá EXISTING-UI.md con los comandos y herramientas ya disponibles
 para levantar esta app, capturar pantallas y comprobar el cambio.
 Registrá las fuentes de branding que usa actualmente el sitio.
 No instales dependencias ni modifiques la UI durante esta preparación.
-Este entorno será dedicado a UI Light: integrá su configuración de modelo
-sin borrar el resto de .codex/config.toml.
+Conservá el modelo y esfuerzo actuales de la herramienta que estoy usando.
 ```
 
-Si el proyecto también usa el orquestador completo, **omití la última oración**:
-no reemplaces su modelo predeterminado. Para el piloto, conviene un checkout o
-entorno dedicado a UI Light con GPT-6 Luna medium. Comprobá una vez que el cliente
-aplica ese modelo. Las reglas no cambian automáticamente una sesión ya abierta.
+Elegí la herramienta de trabajo; no necesitás ejecutar ambas:
+
+| Herramienta | Entrada | Modelo |
+|---|---|---|
+| Codex | AGENTS.md | El paquete propone GPT-6 Luna medium mediante .codex/config.toml |
+| Claude Code | CLAUDE.md, que importa AGENTS.md | El modelo/esfuerzo ya configurados por el equipo en Claude Code |
+
+Solo para un entorno **Codex dedicado a UI Light**, podés agregar al pedido:
+“Integrá las claves de .codex/config.toml del kit sin borrar otras configuraciones”.
+No apliques ese default a un repo mixto gobernado por el orquestador completo.
+Claude Code no usa esa configuración de Codex ni ejecuta Luna por leer estas reglas.
+En Claude Code, revisá `/context` para comprobar que se cargaron las instrucciones.
+
+El modelo elegido debe poder inspeccionar imágenes. Comprobá también el acceso al
+navegador/capturas: las herramientas de una sesión no se heredan automáticamente en
+la otra. Al cambiar de cliente, retomá el mismo UI-ID y contador; no vuelvas a cero
+ni trabajes simultáneamente sobre la misma tarea desde ambos.
 
 El responsable verifica el arranque, acceso a la pantalla, capturas y checks. El
 agente puede completar el mapa desde el código; pregunta solo por información que
@@ -40,7 +53,7 @@ activa no la reemplaza; el kit no compra créditos ni impone un límite duro de 
 
 ## 2. Pedir una actualización
 
-Guardá la imagen en `harness/ui/references/targets/`. Abrí la app preparada en Codex,
+Guardá la imagen en `harness/ui/references/targets/`. Abrí la app preparada en Codex o Claude Code,
 no la carpeta de este kit. Ejemplo con un target aprobado de tu producto:
 
 ```text
@@ -82,7 +95,8 @@ las del proyecto. Un cambio de API, autenticación o lógica pasa al flujo princ
 
 Una pantalla conocida y un cambio acotado: reorganizar cards, ajustar un formulario
 o corregir espaciados. Usá un screenshot claro y una ruta que ya puedas abrir localmente.
-La fidelidad y el ahorro de Luna todavía deben medirse en esa app; no están garantizados.
+La fidelidad y el ahorro deben medirse por modelo y herramienta en esa app; no están
+garantizados. Compatibilidad de instrucciones no equivale a un piloto ya aprobado.
 
 [Flujo visual](docs/ui-workflow.html) · [Plan de piloto](docs/PILOTO.md) ·
 [Mantenimiento](docs/MANTENIMIENTO.md)
