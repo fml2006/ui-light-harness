@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI Light — un cambio visual, un cierre claro</title>
+<style>
+:root{color-scheme:light;--ink:#172b32;--muted:#4b626a;--paper:#f4f6f3;--line:#cbd6d1;--accent:#116451;--soft:#e1eee6;--warn:#795414}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,sans-serif}main{max-width:1120px;margin:auto;padding:42px 28px 64px}header{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:20px;font-size:14px}a{color:var(--accent);text-underline-offset:4px}a:focus-visible{outline:3px solid var(--accent);outline-offset:5px}h1{font-size:clamp(36px,5.4vw,66px);line-height:1.06;letter-spacing:-.045em;max-width:850px;margin:28px 0 20px}h2{font-size:26px;line-height:1.25;margin:0 0 15px}h3{font-size:19px;line-height:1.3;margin:8px 0}p{margin:0 0 14px}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.12em;font-weight:700;font-size:12px}.lead{font-size:20px;max-width:800px;color:var(--muted)}.badge{display:inline-block;background:var(--soft);color:var(--accent);font-size:13px;border-radius:20px;padding:5px 12px}.principle{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:32px 0}.principle article{padding:22px 24px;border-left:3px solid var(--accent);background:white}.principle strong{font-size:21px}.principle p{margin:8px 0 0;color:var(--muted)}section{margin-top:40px}.flow{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0;counter-reset:step}.flow li{background:white;border:1px solid var(--line);border-radius:12px;padding:22px;counter-increment:step}.flow li:before{content:counter(step,decimal-leading-zero);color:var(--accent);font:700 13px/1.4 ui-monospace,monospace}.flow p{font-size:14px;color:var(--muted);margin:0}.outcomes{display:grid;grid-template-columns:1fr 1fr;gap:16px}.outcomes article{border-radius:12px;padding:22px;background:var(--soft)}.outcomes article:last-child{background:#f2eadb}.outcomes p{margin:8px 0 0}.note{border:1px solid var(--line);border-radius:12px;padding:22px;margin-top:20px}.note strong{color:var(--warn)}.columns{display:grid;grid-template-columns:1fr 1fr;gap:32px}.columns ul{padding-left:20px}.columns li{margin:8px 0}code{font-size:.92em;overflow-wrap:anywhere}pre{background:var(--ink);color:#f4f6f3;padding:22px;border-radius:12px;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.65 ui-monospace,monospace}details{border-top:1px solid var(--line);padding:18px 0}summary{cursor:pointer;font-weight:650}details p,details ul{margin-top:14px}footer{margin-top:42px;border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:13px}small{color:var(--muted)}@media(max-width:720px){main{padding:24px 18px 40px}header{flex-wrap:wrap}.flow,.columns,.principle,.outcomes{grid-template-columns:1fr}.flow li{padding:18px}.lead{font-size:18px}section{margin-top:30px}}@media print{body{background:white}main{padding:12px}details{break-inside:avoid}.flow li{break-inside:avoid}a{color:inherit}}
+</style>
+</head>
+<body><main>
+<header><b>UI LIGHT HARNESS / FRONTEND</b><span>V1 para piloto · 25 septiembre 2026</span></header>
+<p class="eyebrow" style="margin-top:30px">Especialización para frontend</p>
+<h1>Un cambio visual.<br>Un cierre claro.</h1>
+<p class="lead">Una app que ya funciona, una referencia aprobada y un agente que ajusta la UI existente. Menos contexto, cambios agrupados y hasta dos pasadas.</p>
+<span class="badge">Candidato inicial: GPT-6 Luna · medium</span>
+<div class="principle"><article><strong>El target guía el resultado.</strong><p>Layout y jerarquía esperados, conservando la marca del sitio actual. Una referencia externa no reemplaza logos, tipografías ni paleta.</p></article><article><strong>El código guía la implementación.</strong><p>Reutilizar componentes, tokens y estilos antes de extender. No reconstruir para imitar una captura.</p></article></div>
+<section aria-labelledby="flow-title"><h2 id="flow-title">El recorrido de una tarea</h2>
+<ol class="flow">
+<li><h3>Target + estado actual</h3><p>Abrir la ruta y capturar BEFORE. Fijar viewport, tema y datos. Si no se puede renderizar, detenerse.</p></li>
+<li><h3>Auditoría agrupada</h3><p>Comparar toda la pantalla y localizar su componente/CSS. Registrar hasta ocho grupos de diferencias.</p></li>
+<li><h3>Primer patch</h3><p>Modificar lo necesario, reutilizando lo existente. Registrar la primera pasada antes de editar.</p></li>
+<li><h3>Render + comprobación</h3><p>Inspeccionar AFTER, comprobar interacciones y responsive. Comparar todos los targets del lote.</p></li>
+<li><h3>Una corrección residual</h3><p>Solo si falta algo: agrupar residuos, corregir y validar otra vez. No iniciar una nueva exploración general.</p></li>
+<li><h3>Cerrar o devolver</h3><p>Entregar estado, diff, capturas y checks. Si no alcanza, explicar el bloqueo sin tercera pasada.</p></li>
+</ol>
+<div class="outcomes"><article><b>DONE</b><p>Referencia cumplida y comprobaciones pertinentes realizadas. Si ocurre en la primera pasada, se termina ahí.</p></article><article><b>NEEDS_REVIEW / BLOCKED / ESCALATE</b><p>Diferencias pendientes, entorno incompleto o tarea fuera de alcance. Conservar evidencia y explicar la decisión necesaria.</p></article></div>
+<div class="note"><strong>Una pasada es un lote de edición y su validación.</strong> Desktop y mobile del mismo lote no cuentan como dos pasadas. La V1 registra este límite mediante instrucciones; no tiene un contador impuesto por software ni un tope duro de créditos.</div>
+</section>
+<section class="columns"><article><h2>Dónde conviene</h2><ul><li>Ajustar cards, formularios, spacing y tipografía.</li><li>Igualar una pantalla a una referencia concreta.</li><li>Corregir layout y responsive con componentes conocidos.</li><li>Pequeños cambios de markup sin alterar comportamiento.</li></ul></article><article><h2>Dónde cambia el modo</h2><ul><li>Autenticación, APIs, datos o reglas de negocio.</li><li>Estado complejo, arquitectura o refactor amplio.</li><li>Cambios compartidos cuyo impacto no se puede acotar.</li><li>Problema visual que supera las dos pasadas o la capacidad del modelo.</li></ul></article></section>
+<section><h2>Cómo pedirlo</h2><p>Instalá las reglas en tu app existente y abrí esa app en Codex. La guía <a href="../USO.md">USO.md</a> explica la preparación y los pedidos cotidianos.</p><pre>Usá UI Light. Actualizá /dashboard para que coincida con:
+harness/ui/references/targets/dashboard__desktop-1440__default__target.png
+
+Viewport: 1440×900 CSS px, DPR 1, tema claro.
+Conservá branding, comportamiento y datos. Preservá el responsive actual.
+Validá visualmente y terminá en hasta dos pasadas.</pre><small>El proyecto necesita su mapa de arranque/capturas y autorización de consumo previamente establecidos. Este pedido no autoriza compras ni reemplaza el presupuesto.</small></section>
+<section><h2>Relación con el kit principal</h2><p><b>Independiente:</b> dev → Luna → autoverificación → entrega al dev. No necesita otro orquestador ni hace push.</p><p><b>Integración futura:</b> orquestador → worker UI → evidencia → QA cruzado → aprobación del dev. Requiere adaptar el runner y transportar capturas; todavía no está conectado.</p><p>DONE visual no equivale al PASS del kit robusto. Una tarea gobernada por ese kit conserva sus controles.</p></section>
+<section><h2>Lo que ya está y lo que falta comprobar</h2><p>Está definido el contrato, la configuración de proyecto y la memoria mínima. Falta comprobar con una app real si Luna entrega cambios aceptables en dos pasadas con menor costo total.</p>
+<details><summary>Archivos para usar y mantener el módulo</summary><ul>
+<li><a href="../USO.md">USO.md</a>: guía rápida y ejemplos. <a href="../README.md">README</a>: alcance real.</li>
+<li><a href="MANTENIMIENTO.md">Mantenimiento</a>: versiones y relación con el kit completo.</li>
+<li><a href="../AGENTS.md">AGENTS.md</a> y <a href="../.codex/config.toml">config.toml</a>: entrada breve y default del proyecto dedicado.</li>
+<li><a href="../harness/ui/UI-LIGHT.md">UI-LIGHT</a>: procedimiento; <a href="../harness/ui/REFERENCE-POLICY.md">referencias</a>: resolver prioridades.</li>
+<li><a href="../harness/ui/EXISTING-UI.md">EXISTING-UI</a>: mapa operativo; <a href="../harness/ui/UI-PATTERNS.md">patrones</a> y <a href="../harness/ui/BRAND-SOURCES.md">marca</a>: memoria con fuentes.</li>
+<li><a href="../harness/ui/CHECKLIST.md">Checklist</a> y <a href="../harness/ui/templates/UI-TASK.md">tarea</a>: evidencia y cierre.</li>
+<li><a href="DECISIONES.md">Evaluación crítica</a> y <a href="PILOTO.md">piloto propuesto</a>: cómo decidir con datos.</li>
+</ul></details>
+<details><summary>Por qué Luna y por qué no prometer ahorro todavía</summary><p>OpenAI documenta entrada de imágenes para Luna y orienta medium a cambios coordinados. Eso justifica probarlo; no demuestra precisión visual en este proyecto. El costo útil incluye correcciones y tiempo del dev.</p><p><a href="https://developers.openai.com/api/docs/models/gpt-6-luna">Modelo</a> · <a href="https://developers.openai.com/api/docs/guides/model-selection">Selección</a> · <a href="https://learn.chatgpt.com/docs/config-file/config-reference">Configuración de proyecto</a></p></details>
+</section>
+<footer>Sin llamadas a modelos, telemetría, JavaScript ni dependencias externas. Esta página explica el flujo; no ejecuta tareas ni activa consumo.</footer>
+</main></body></html>
