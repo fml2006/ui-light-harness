@@ -7,12 +7,21 @@ locales reducen la incertidumbre. El ahorro viene de reducir contexto y decision
 reutilizar el código y cerrar antes; no de elegir siempre el modelo más barato.
 No hace falta un orquestador adicional para este recorrido secuencial.
 
+## Compatibilidad de clientes
+
+Las reglas visuales son comunes. Codex entra por AGENTS.md y Claude Code por CLAUDE.md,
+que importa esa entrada breve. El contrato largo se lee solo al activar UI Light.
+El soporte de instrucciones no aporta automáticamente navegador, autenticación ni
+herramientas al otro cliente. No hay delegación entre proveedores en este modo.
+La V0.1.1 añade esa entrada y guía; no implica pruebas reales en ambos clientes.
+
 ## Modelo y esfuerzo
 
 La [documentación oficial de Luna](https://developers.openai.com/api/docs/models/gpt-6-luna)
 confirma entrada de imágenes y tareas focalizadas. La [guía de selección](https://developers.openai.com/api/docs/guides/model-selection)
 orienta Luna medium a cambios coordinados sobre trabajo existente. Por eso es el
-candidato inicial. No demuestra precisión visual suficiente sobre nuestros proyectos.
+candidato inicial **para Codex**. Claude Code conserva el modelo/esfuerzo elegidos
+por el equipo; no se impone un modelo equivalente sin evaluar el piloto. Esto no demuestra precisión visual suficiente sobre nuestros proyectos.
 Low podría evaluarse después para ajustes mínimos inequívocos; no se cambia esfuerzo
 automáticamente en mitad del piloto. Sol/Opus quedan para una escalación justificada,
 también si la dificultad es CSS/visual. Astra/Fable no son el siguiente paso por defecto.
@@ -37,7 +46,7 @@ también si la dificultad es CSS/visual. Astra/Fable no son el siguiente paso po
 
 Dos modos distintos, con entrega humana común:
 
-- **Independiente:** dev → Luna → checks + comparación visual → resultado al dev.
+- **Independiente:** dev → agente del cliente elegido → checks + comparación visual → resultado al dev.
   La nueva propuesta autoriza este modo sin QA de otro proveedor; no se presenta como
   si ofreciera la misma garantía que v3. No hay push ni merge automático.
 - **Integrado (diseño, no implementado):** orquestador fuerte clasifica una vez → worker

@@ -1,7 +1,10 @@
 # Piloto propuesto · no ejecutado
 
-Objetivo: verificar si Luna entiende la UI existente, reutiliza estilos, cumple el
+Objetivo: verificar si el modelo elegido en Codex o Claude Code entiende la UI existente, reutiliza estilos, cumple el
 target en hasta dos pasadas y conserva comportamiento. No medir solo si produce algo lindo.
+
+Evaluar cada combinación de cliente/modelo por separado cuando se autorice su piloto.
+No extrapolar el resultado de Luna a Claude ni ejecutar una comparación doble por defecto.
 
 ## Muestra acotada
 

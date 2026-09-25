@@ -14,7 +14,7 @@
 <p class="eyebrow" style="margin-top:30px">Especialización para frontend</p>
 <h1>Un cambio visual.<br>Un cierre claro.</h1>
 <p class="lead">Una app que ya funciona, una referencia aprobada y un agente que ajusta la UI existente. Menos contexto, cambios agrupados y hasta dos pasadas.</p>
-<span class="badge">Candidato inicial: GPT-6 Luna · medium</span>
+<span class="badge">Codex: Luna medium · Claude Code: modelo del equipo</span>
 <div class="principle"><article><strong>El target guía el resultado.</strong><p>Layout y jerarquía esperados, conservando la marca del sitio actual. Una referencia externa no reemplaza logos, tipografías ni paleta.</p></article><article><strong>El código guía la implementación.</strong><p>Reutilizar componentes, tokens y estilos antes de extender. No reconstruir para imitar una captura.</p></article></div>
 <section aria-labelledby="flow-title"><h2 id="flow-title">El recorrido de una tarea</h2>
 <ol class="flow">
@@ -29,17 +29,18 @@
 <div class="note"><strong>Una pasada es un lote de edición y su validación.</strong> Desktop y mobile del mismo lote no cuentan como dos pasadas. La V1 registra este límite mediante instrucciones; no tiene un contador impuesto por software ni un tope duro de créditos.</div>
 </section>
 <section class="columns"><article><h2>Dónde conviene</h2><ul><li>Ajustar cards, formularios, spacing y tipografía.</li><li>Igualar una pantalla a una referencia concreta.</li><li>Corregir layout y responsive con componentes conocidos.</li><li>Pequeños cambios de markup sin alterar comportamiento.</li></ul></article><article><h2>Dónde cambia el modo</h2><ul><li>Autenticación, APIs, datos o reglas de negocio.</li><li>Estado complejo, arquitectura o refactor amplio.</li><li>Cambios compartidos cuyo impacto no se puede acotar.</li><li>Problema visual que supera las dos pasadas o la capacidad del modelo.</li></ul></article></section>
-<section><h2>Cómo pedirlo</h2><p>Instalá las reglas en tu app existente y abrí esa app en Codex. La guía <a href="../USO.md">USO.md</a> explica la preparación y los pedidos cotidianos.</p><pre>Usá UI Light. Actualizá /dashboard para que coincida con:
+<section><h2>Cómo pedirlo</h2><p>Instalá las reglas en tu app existente y abrí esa app en Codex o Claude Code. La guía <a href="../USO.md">USO.md</a> explica la preparación y los pedidos cotidianos.</p><pre>Usá UI Light. Actualizá /dashboard para que coincida con:
 harness/ui/references/targets/dashboard__desktop-1440__default__target.png
 
 Viewport: 1440×900 CSS px, DPR 1, tema claro.
 Conservá branding, comportamiento y datos. Preservá el responsive actual.
 Validá visualmente y terminá en hasta dos pasadas.</pre><small>El proyecto necesita su mapa de arranque/capturas y autorización de consumo previamente establecidos. Este pedido no autoriza compras ni reemplaza el presupuesto.</small></section>
-<section><h2>Relación con el kit principal</h2><p><b>Independiente:</b> dev → Luna → autoverificación → entrega al dev. No necesita otro orquestador ni hace push.</p><p><b>Integración futura:</b> orquestador → worker UI → evidencia → QA cruzado → aprobación del dev. Requiere adaptar el runner y transportar capturas; todavía no está conectado.</p><p>DONE visual no equivale al PASS del kit robusto. Una tarea gobernada por ese kit conserva sus controles.</p></section>
-<section><h2>Lo que ya está y lo que falta comprobar</h2><p>Está definido el contrato, la configuración de proyecto y la memoria mínima. Falta comprobar con una app real si Luna entrega cambios aceptables en dos pasadas con menor costo total.</p>
+<section><h2>Relación con el kit principal</h2><p><b>Independiente:</b> dev → agente de Codex o Claude Code → autoverificación → entrega al dev. No necesita otro orquestador ni hace push.</p><p><b>Integración futura:</b> orquestador → worker UI → evidencia → QA cruzado → aprobación del dev. Requiere adaptar el runner y transportar capturas; todavía no está conectado.</p><p>DONE visual no equivale al PASS del kit robusto. Una tarea gobernada por ese kit conserva sus controles.</p></section>
+<section><h2>Lo que ya está y lo que falta comprobar</h2><p>Está definido el contrato, la configuración de proyecto y la memoria mínima. Falta comprobar con una app real si el modelo elegido en cada cliente entrega cambios aceptables en dos pasadas con menor costo total.</p>
 <details><summary>Archivos para usar y mantener el módulo</summary><ul>
 <li><a href="../USO.md">USO.md</a>: guía rápida y ejemplos. <a href="../README.md">README</a>: alcance real.</li>
 <li><a href="MANTENIMIENTO.md">Mantenimiento</a>: versiones y relación con el kit completo.</li>
+<li><a href="../CLAUDE.md">CLAUDE.md</a>: entrada para Claude Code; importa las reglas comunes.</li>
 <li><a href="../AGENTS.md">AGENTS.md</a> y <a href="../.codex/config.toml">config.toml</a>: entrada breve y default del proyecto dedicado.</li>
 <li><a href="../harness/ui/UI-LIGHT.md">UI-LIGHT</a>: procedimiento; <a href="../harness/ui/REFERENCE-POLICY.md">referencias</a>: resolver prioridades.</li>
 <li><a href="../harness/ui/EXISTING-UI.md">EXISTING-UI</a>: mapa operativo; <a href="../harness/ui/UI-PATTERNS.md">patrones</a> y <a href="../harness/ui/BRAND-SOURCES.md">marca</a>: memoria con fuentes.</li>
